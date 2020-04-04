@@ -51,11 +51,18 @@
               completedTodos++;
             }
           }
+          // Case 1: if everything's true, make everything false
           if (completedTodos === totalTodos) {
             for(var i = 0; i < totalTodos; i++) {
               this.todos[i].completed = false;
             }
+            //Otherwise, make everything true 
+          } else {
+            for(var i = 0; i < totalTodos; i++) {
+              this.todos[i].completed = true;
+            }
           }
+
           this.displayTodos();
         }
       };
