@@ -4,7 +4,9 @@
   </head>
 
   <body>
-    HTML GOES HERE
+    <h1>Todo List</h1>
+    <button id="displayTodosButton">Display todos</button>
+    <button>Toggle All</button>
     <script>
       var todoList = {
         todos: [],
@@ -46,17 +48,20 @@
           var totalTodos = this.todos.length;
           var completedTodos = 0;
 
+          // Get number of completed todos
           for(var i = 0; i < totalTodos; i++) {
             if (this.todos[i].completed === true) {
               completedTodos++;
             }
           }
+
           // Case 1: if everything's true, make everything false
           if (completedTodos === totalTodos) {
             for(var i = 0; i < totalTodos; i++) {
               this.todos[i].completed = false;
             }
-            //Otherwise, make everything true 
+
+          //Otherwise, make everything true 
           } else {
             for(var i = 0; i < totalTodos; i++) {
               this.todos[i].completed = true;
@@ -66,6 +71,13 @@
           this.displayTodos();
         }
       };
+
+      var displayTodosButton = document.getElementById('displayTodosButton');
+      console.log(displayTodosButton);
+
+      displayTodosButton.addEventListener('click', function() {
+        todoList.displayTodos();
+      });
     </script>
   </body>
 </html>
