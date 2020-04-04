@@ -6,7 +6,7 @@
   <body>
     <h1>Todo List</h1>
     <button id="displayTodosButton">Display todos</button>
-    <button>Toggle All</button>
+    <button id="toggleAllButton">Toggle All</button>
     <script>
       var todoList = {
         todos: [],
@@ -73,11 +73,14 @@
       };
 
       var displayTodosButton = document.getElementById('displayTodosButton');
-      console.log(displayTodosButton);
+      var toggleAllButton = document.getElementById('toggleAllButton');
 
       displayTodosButton.addEventListener('click', function() {
         todoList.displayTodos();
       });
+      toggleAllButton.addEventListener('click', function() {
+        todoList.toogleAll()
+      })
     </script>
   </body>
 </html>
