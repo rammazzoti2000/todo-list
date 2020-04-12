@@ -99,7 +99,16 @@ var view = {
     todosUl.innerHTML = '';
     for(let i = 0; i < todoList.todos.length; i++) {
       var todoLi = document.createElement('li');
-      todoLi.textContent = todoList.todos[i].todoText;
+      var todo = todoList.todos[i];
+      var todoTextWithCompletion = '';
+
+      if (todo.completed === true) {
+        todoTextWithCompletion = '(x) ' +  todo.todoText;
+      } else {
+        todoTextWithCompletion = '( ) ' +  todo.todoText;
+      }
+
+      todoLi.textContent = todoTextWithCompletion;
       todosUl.appendChild(todoLi);
     }
   }
